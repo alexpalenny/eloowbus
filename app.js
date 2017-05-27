@@ -8,15 +8,13 @@ var passport = require('passport');
 var session = require('express-session');
 var passportLocal = require('passport-local');
 var fs = require('fs');
-var sys = require('sys');
+var util = require('util');
 
 var api = require('./routes/api');
 var views = require('./routes/views');
 //var authenticate = require('./routes/authenticate');
 
 var app = express();
-
-app.set('view engine', 'jade');
 
 // view engine setup
 app.set("view options", {layout: false});
