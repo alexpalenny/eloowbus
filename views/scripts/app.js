@@ -7,12 +7,12 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
         blank: '/partials/pages/blank.html',
     }
 
-    vm.authorSongs = [];
-    vm.coverSongs = []
-    vm.acousticSongs = []
-    http.get('api/songs/author').then(function (res) { vm.authorSongs = res.data; });
-    http.get('api/songs/cover').then(function (res) { vm.coverSongs = res.data; });
-    http.get('api/songs/acoustic').then(function (res) { vm.acousticSongs = res.data; });
+    vm.songs = {
+        author: [],
+        cover: [],
+        acoustic: [],
+    };
+    http.get('api/songs/').then(function (res) { vm.songs = res.data; });
 
     vm.pageName = "table";
     vm.pageUrl = vm.pages[vm.pageName];

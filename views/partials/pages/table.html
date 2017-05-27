@@ -19,14 +19,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="song in vm.authorSongs">
+                                    <tr ng-repeat="song in vm.songs.author">
                                         <td>{{song.name}}</td>
                                         <td>{{song.alex}}</td>
                                         <td>{{song.dima}}</td>
                                         <td>{{song.grisha}}</td>
                                         <td>{{song.valya}}</td>
                                     </tr>
-                                    <tr><td colspan="5"><span style="float: right"><b>Всего: {{vm.authorSongs.length}}</b></span></td><tr>
+                                    <tr><td colspan="5"><span style="float: right"><b>Всего: {{vm.songs.author.length}}</b></span></td><tr>
                                 </tbody>
                             </table>
                         </div>
@@ -54,14 +54,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="song in vm.coverSongs">
+                                    <tr ng-repeat="song in vm.songs.cover">
                                         <td>{{song.name}}</td>
                                         <td>{{song.alex}}</td>
                                         <td>{{song.dima}}</td>
                                         <td>{{song.grisha}}</td>
                                         <td>{{song.valya}}</td>
                                     </tr>
-                                    <tr><td colspan="5"><span style="float: right"><b>Всего: {{vm.coverSongs.length}}</b></span></td><tr>
+                                    <tr><td colspan="5"><span style="float: right"><b>Всего: {{vm.songs.cover.length}}</b></span></td><tr>
                                 </tbody>
                             </table>
                         </div>
@@ -89,14 +89,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="song in vm.acousticSongs">
+                                    <tr ng-repeat="song in vm.songs.acoustic">
                                         <td>{{song.name}}</td>
                                         <td>{{song.alex}}</td>
                                         <td>{{song.dima}}</td>
                                         <td>{{song.grisha}}</td>
                                         <td>{{song.valya}}</td>
                                     </tr>
-                                    <tr><td colspan="5"><span style="float: right"><b>Всего: {{vm.acousticSongs.length}}</b></span></td><tr>
+                                    <tr><td colspan="5"><span style="float: right"><b>Всего: {{vm.songs.acoustic.length}}</b></span></td><tr>
                                 </tbody>
                             </table>
                         </div>
