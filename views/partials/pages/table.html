@@ -186,8 +186,8 @@
                             <div class="you-tube">
                                 <b>Ссылка YouTube:</b>
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#emainVideo" aria-controls="emainVideo" role="tab" data-toggle="tab">Основное</a></li>
-                                    <li role="presentation"><a href="#ecoverVideo" aria-controls="ecoverVideo" role="tab" data-toggle="tab">Кавер</a></li>
+                                    <li role="presentation" class="active"><a href="#emainVideo" aria-controls="emainVideo" style="padding: 4px 10px 4px 10px;" role="tab" data-toggle="tab">Оригинал</a></li>
+                                    <li role="presentation"><a href="#ecoverVideo" aria-controls="ecoverVideo" style="padding: 4px 10px 4px 10px;" role="tab" data-toggle="tab">Кавер</a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active you-tube" id="emainVideo" style="text-align: center">
@@ -218,8 +218,8 @@
                         </div>
                         <div ng-if="!vm.editSong">
                             <ul ng-if="vm.currentSong.details.youTube || vm.currentSong.details.youTubeCover" class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#mainVideo" aria-controls="mainVideo" role="tab" data-toggle="tab" ng-if="vm.currentSong.details.youTube">Основное</a></li>
-                                <li role="presentation" ng-class="{active: !vm.currentSong.details.youTube}"><a href="#coverVideo" aria-controls="coverVideo" role="tab" data-toggle="tab" ng-if="vm.currentSong.details.youTubeCover">Кавер</a></li>
+                                <li role="presentation" class="active"><a href="#mainVideo" aria-controls="mainVideo" role="tab" data-toggle="tab" style="padding: 4px 10px 4px 10px;" ng-if="vm.currentSong.details.youTube">Оригинал</a></li>
+                                <li role="presentation" ng-class="{active: !vm.currentSong.details.youTube}"><a href="#coverVideo" aria-controls="coverVideo" role="tab" style="padding: 4px 10px 4px 10px;" data-toggle="tab" ng-if="vm.currentSong.details.youTubeCover">Кавер</a></li>
                             </ul>
                             <div ng-if="vm.currentSong.details.youTube || vm.currentSong.details.youTubeCover" class="tab-content">
                                 <div role="tabpanel" class="tab-pane active you-tube" id="mainVideo" style="text-align: center" ng-if="vm.currentSong.details.youTube">
