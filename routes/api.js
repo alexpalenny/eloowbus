@@ -14,12 +14,8 @@ router.route('/posts/:id')
 
 router.route('/songs')
 	.get(function (req, res) {
-		var songs = {
-			author: [],
-			cover: [],
-			acoustic: [],
-		}
 		//https://www.freeformatter.com/javascript-escape.html#ad-output
+		var songs = []
 		var fSongs = JSON.parse(fs.readFileSync('data/songs.json', 'utf8'));
 		songs = fSongs || songs;
 		res.send(songs);
