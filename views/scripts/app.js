@@ -19,5 +19,23 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
     vm.changePage = function (pageName) {
         vm.pageName = pageName;
         vm.pageUrl = vm.pages[vm.pageName];
+    };
+    vm.currentSong = {};
+    vm.showSong = function (song) {
+        vm.currentSong = song;
+    };
+    vm.saveSong = function () {
+        //vm.currentSong.details = song;
+        vm.editSong = false;
+        http.post('api/savesongs/', vm.songs)
+    };
+    vm.getVideo = function(source) {
+        return 'https://www.youtube.com/embed/' + source;
     }
 }]);
+app.config(function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+    'self',
+    'https://www.youtube.com/**'
+  ]);
+});

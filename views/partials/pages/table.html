@@ -20,13 +20,15 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="song in vm.songs.author">
-                                        <td>{{song.name}}</td>
+                                        <td><span>{{song.name}}</span><span style="float: right"><button type="button" ng-click="vm.showSong(song)" class="btn btn-primary btn-small" data-toggle="modal" data-target="#songModal">Подробнее</button></span></td>
                                         <td>{{song.alex}}</td>
                                         <td>{{song.dima}}</td>
                                         <td>{{song.grisha}}</td>
                                         <td>{{song.valya}}</td>
                                     </tr>
-                                    <tr><td colspan="5"><span style="float: right"><b>Всего: {{vm.songs.author.length}}</b></span></td><tr>
+                                    <tr>
+                                        <td colspan="5"><span style="float: right"><b>Всего: {{vm.songs.author.length}}</b></span></td>
+                                        <tr>
                                 </tbody>
                             </table>
                         </div>
@@ -61,7 +63,9 @@
                                         <td>{{song.grisha}}</td>
                                         <td>{{song.valya}}</td>
                                     </tr>
-                                    <tr><td colspan="5"><span style="float: right"><b>Всего: {{vm.songs.cover.length}}</b></span></td><tr>
+                                    <tr>
+                                        <td colspan="5"><span style="float: right"><b>Всего: {{vm.songs.cover.length}}</b></span></td>
+                                        <tr>
                                 </tbody>
                             </table>
                         </div>
@@ -96,7 +100,9 @@
                                         <td>{{song.grisha}}</td>
                                         <td>{{song.valya}}</td>
                                     </tr>
-                                    <tr><td colspan="5"><span style="float: right"><b>Всего: {{vm.songs.acoustic.length}}</b></span></td><tr>
+                                    <tr>
+                                        <td colspan="5"><span style="float: right"><b>Всего: {{vm.songs.acoustic.length}}</b></span></td>
+                                        <tr>
                                 </tbody>
                             </table>
                         </div>
@@ -106,6 +112,43 @@
             </div>
         </div>
 
+        <!-- Modal -->
+        <div class="modal fade" id="songModal" tabindex="-1" role="dialog" aria-labelledby="songModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="songModalLabel">{{vm.currentSong.name}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div ng-if="vm.editSong">
+                            <div class="you-tube">
+                                <b>Ссылка YouTube:</b>
+                                <input class="form-control" ng-model="vm.currentSong.details.youTube"></input>
+                            </div>
+                            <div class="text">
+                                <b>Текст песни:</b>
+                                <textarea rows="15" class="form-control" ng-model="vm.currentSong.details.text"></textarea>
+                            </div>
+                        </div>
+                        <div ng-if="!vm.editSong">
+                            <div class="you-tube" style="text-align: center" ng-if="vm.currentSong.details.youTube">                            
+                                <iframe width="560" height="315" ng-src="{{vm.getVideo(vm.currentSong.details.youTube)}}" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <div class="text" ng-if="vm.currentSong.details.text">
+                                <b>Текст песни:</b>
+                                <pre>{{vm.currentSong.details.text}}</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" ng-if="!vm.editSong" ng-click="vm.editSong = true" class="btn btn-primary">Edit</button>
+                        <button type="button" ng-click="vm.saveSong()" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!--Другая херня-->
         <div ng-if="false">

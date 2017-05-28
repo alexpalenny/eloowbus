@@ -19,9 +19,17 @@ router.route('/songs')
 			cover: [],
 			acoustic: [],
 		}
-		fSongs = JSON.parse(fs.readFileSync('data/songs.json', 'utf8'));
+		//https://www.freeformatter.com/javascript-escape.html#ad-output
+		var fSongs = JSON.parse(fs.readFileSync('data/songs.json', 'utf8'));
 		songs = fSongs || songs; 
 		res.send(songs);
 	});
-//tstttcc
+router.route('/savesongs')
+	.post(function (req, res) {
+		console.log(res);
+		var songs = res.data;
+		var fSongs = JSON.stringify(songs);
+		//res.send(fSongs);
+		//fs.writeFileSync('data/songs.json', fSongs);
+	});
 module.exports = router;
