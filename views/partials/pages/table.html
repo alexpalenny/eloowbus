@@ -150,7 +150,7 @@
                         </div>
                         <div ng-if="!vm.editSong">
                             <div class="you-tube" style="text-align: center" ng-if="vm.currentSong.details.youTube">
-                                <iframe width="560" height="315" ng-src="{{vm.getVideo(vm.currentSong.details.youTube)}}" frameborder="0" allowfullscreen></iframe>
+                                <iframe width="100%" ng-src="{{vm.getVideo(vm.currentSong.details.youTube)}}" frameborder="0" allowfullscreen></iframe>
                             </div>
                             <div class="text" ng-if="vm.currentSong.details.text">
                                 <b>Текст песни:</b>
