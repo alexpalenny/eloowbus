@@ -6,7 +6,7 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
         table: '/partials/pages/table.html',
         blank: '/partials/pages/blank.html',
     }
-
+    vm.pass = "";
     vm.songs = {
         author: [],
         cover: [],
@@ -24,12 +24,14 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
     vm.showSong = function (song) {
         vm.currentSong = song;
     };
-    vm.saveSong = function () {
-        if (vm.currentSong.details.youTube && vm.currentSong.details.youTube.indexOf("youtube") !== -1)
-           vm.currentSong.details.youTube = vm.youtube_parser(vm.currentSong.details.youTube);
-        vm.currentSong.details = song;
-        vm.editSong = false;
-        http.post('api/savesongs/', vm.songs)
+    vm.saveSong = function (song) {
+        if (vm.pass) {
+            if (song.details && song.details.youTube && song.details.youTube.indexOf("youtube") !== -1)
+                song.details.youTube = vm.youtube_parser(song.details.youTube);
+            vm.editSong = false;
+            http.post('api/savesongs/' + vm.pass, vm.songs)
+        }
+        else alert("Please enter password")
     };
     vm.getVideo = function (source) {
         return 'https://www.youtube.com/embed/' + source;

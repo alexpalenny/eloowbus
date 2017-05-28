@@ -21,15 +21,16 @@ router.route('/songs')
 		}
 		//https://www.freeformatter.com/javascript-escape.html#ad-output
 		var fSongs = JSON.parse(fs.readFileSync('data/songs.json', 'utf8'));
-		songs = fSongs || songs; 
+		songs = fSongs || songs;
 		res.send(songs);
 	});
-router.route('/savesongs')
+router.route('/savesongs/:pass')
 	.post(function (req, res) {
-		//console.log(req.body);
-		var songs = req.body;
-		var fSongs = JSON.stringify(songs);
-		fs.writeFileSync('data/songs.json', fSongs);
-		//res.send(fSongs);
+		if (req.params.pass == "nash") {
+			var songs = req.body;
+			var fSongs = JSON.stringify(songs);
+			fs.writeFileSync('data/songs.json', fSongs);
+		}
+		else res.send("Password incorrect");
 	});
 module.exports = router;
