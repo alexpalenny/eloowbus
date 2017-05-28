@@ -21,19 +21,18 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="song in vm.songs | filter: { type:'author' } as authorSongs">
-                                        <td><span>{{song.name}}</span><span style="float: right"><button type="button" ng-click="vm.showSong(song)" class="btn btn-primary btn-small" data-toggle="modal" data-target="#songModal">Подробнее</button></span></td>
-                                        <td>{{song.alex}}</td>
-                                        <td>{{song.dima}}</td>
-                                        <td>{{song.grisha}}</td>
-                                        <td>{{song.valya}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.name}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.alex}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.dima}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.grisha}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.valya}}</td>
                                         <td style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
                                     <tr>
                                         <td colspan="6"><button class="btn btn-primary btn-small" ng-click="vm.createSong('author')" data-toggle="modal"
                                                 data-target="#addSongModal"><i class="glyphicon glyphicon-plus"></i></button>
-                                            <span
-                                                style="float: right"><b>Всего: {{authorSongs.length}}</b></span>
+                                            <span style="float: right"><b>Всего: {{authorSongs.length}}</b></span>
                                         </td>
                                         <tr>
                                 </tbody>
@@ -65,19 +64,18 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="song in vm.songs | filter: { type:'cover' } as coverSongs">
-                                        <td><span>{{song.name}}</span><span style="float: right"><button type="button" ng-click="vm.showSong(song)" class="btn btn-primary btn-small" data-toggle="modal" data-target="#songModal">Подробнее</button></span></td>
-                                        <td>{{song.alex}}</td>
-                                        <td>{{song.dima}}</td>
-                                        <td>{{song.grisha}}</td>
-                                        <td>{{song.valya}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.name}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.alex}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.dima}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.grisha}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.valya}}</td>
                                         <td style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
                                     <tr>
                                         <td colspan="6"><button class="btn btn-primary btn-small" ng-click="vm.createSong('cover')" data-toggle="modal"
                                                 data-target="#addSongModal"><i class="glyphicon glyphicon-plus"></i></button>
-                                            <span
-                                                style="float: right"><b>Всего: {{coverSongs.length}}</b></span>
+                                            <span style="float: right"><b>Всего: {{coverSongs.length}}</b></span>
                                         </td>
                                         <tr>
                                 </tbody>
@@ -109,19 +107,18 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="song in vm.songs | filter: { type:'acoustic' } as acousticSongs">
-                                        <td><span>{{song.name}}</span><span style="float: right"><button type="button" ng-click="vm.showSong(song)" class="btn btn-primary btn-small" data-toggle="modal" data-target="#songModal">Подробнее</button></span></td>
-                                        <td>{{song.alex}}</td>
-                                        <td>{{song.dima}}</td>
-                                        <td>{{song.grisha}}</td>
-                                        <td>{{song.valya}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.name}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.alex}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.dima}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.grisha}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.valya}}</td>
                                         <td style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
                                     <tr>
                                         <td colspan="6"><button class="btn btn-primary btn-small" ng-click="vm.createSong('acoustic')" data-toggle="modal"
                                                 data-target="#addSongModal"><i class="glyphicon glyphicon-plus"></i></button>
-                                            <span
-                                                style="float: right"><b>Всего: {{acousticSongs.length}}</b></span>
+                                            <span style="float: right"><b>Всего: {{acousticSongs.length}}</b></span>
                                         </td>
                                         <tr>
                                 </tbody>
@@ -132,12 +129,13 @@
                 </div>
             </div>
         </div>
+
         <div class="modal fade" id="removeSongModal" tabindex="-1" role="dialog" aria-labelledby="removeSongModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="removeSongModalLabel">{{vm.currentSong.name}}</h4>
+                        <h4 class="modal-title" id="removeSongModalLabel">Удалить: {{vm.currentSong.name}}</h4>
                     </div>
                     <div class="modal-footer">
                         <button type="button" ng-click="vm.removeSong(vm.currentSong)" class="btn btn-primary" data-dismiss="modal">Delete</button>
@@ -153,27 +151,29 @@
                             </div>
                             <div class="pass">
                                 <b>Пароль:</b>
-                                <input type="password" class="form-control" ng-model="vm.pass"/>
+                                <input type="password" class="form-control" ng-model="vm.pass" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
         <!-- Modal -->
-        <div class="modal fade" id="songModal" tabindex="-1" role="dialog" aria-labelledby="songModalLabel">
+        <div class="modal modal-edit fade" id="songModal" tabindex="-1" role="dialog" aria-labelledby="songModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="songModalLabel">{{vm.currentSong.name}}</h4>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" style="padding-bottom: 0">
                         <button type="button" ng-if="!vm.editSong" ng-click="vm.editSong = true" class="btn btn-primary">Edit</button>
                         <button type="button" ng-if="vm.editSong" ng-click="vm.saveSong(vm.currentSong)" class="btn btn-primary">Save</button>
                         <button type="button" class="btn btn-default" ng-click="vm.editSong = false" data-dismiss="modal">Close</button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" style="padding-top: 0">
                         <div ng-if="vm.editSong">
                             <div class="pass">
                                 <b>Пароль:</b>
@@ -185,7 +185,19 @@
                             </div>
                             <div class="you-tube">
                                 <b>Ссылка YouTube:</b>
-                                <input class="form-control" ng-model="vm.currentSong.details.youTube"></input>
+
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#emainVideo" aria-controls="emainVideo" role="tab" data-toggle="tab">Основное</a></li>
+                                    <li role="presentation"><a href="#ecoverVideo" aria-controls="ecoverVideo" role="tab" data-toggle="tab">Кавер</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active you-tube" id="emainVideo" style="text-align: center">
+                                        <input class="form-control" ng-model="vm.currentSong.details.youTube"></input>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane you-tube" id="ecoverVideo" style="text-align: center">
+                                        <input class="form-control" ng-model="vm.currentSong.details.youTubeCover"></input>
+                                    </div>
+                                </div>
                             </div>
                             <div class="text">
                                 <b>Текст песни:</b>
@@ -197,9 +209,19 @@
                             </div>
                         </div>
                         <div ng-if="!vm.editSong">
-                            <div class="you-tube" style="text-align: center" ng-if="vm.currentSong.details.youTube">
-                                <iframe width="100%" ng-src="{{vm.getVideo(vm.currentSong.details.youTube)}}" frameborder="0" allowfullscreen></iframe>
+                            <ul ng-if="vm.currentSong.details.youTube || vm.currentSong.details.youTubeCover" class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#mainVideo" aria-controls="mainVideo" role="tab" data-toggle="tab" ng-if="vm.currentSong.details.youTube">Основное</a></li>
+                                <li role="presentation" ng-class="{active: !vm.currentSong.details.youTube}"><a href="#coverVideo" aria-controls="coverVideo" role="tab" data-toggle="tab" ng-if="vm.currentSong.details.youTubeCover">Кавер</a></li>
+                            </ul>
+                            <div ng-if="vm.currentSong.details.youTube || vm.currentSong.details.youTubeCover" class="tab-content">
+                                <div role="tabpanel" class="tab-pane active you-tube" id="mainVideo" style="text-align: center" ng-if="vm.currentSong.details.youTube">
+                                    <iframe width="100%" ng-src="{{vm.getVideo(vm.currentSong.details.youTube)}}" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div role="tabpanel" ng-class="{active: !vm.currentSong.details.youTube}" class="tab-pane you-tube" id="coverVideo" style="text-align: center" ng-if="vm.currentSong.details.youTubeCover">
+                                    <iframe width="100%" ng-src="{{vm.getVideo(vm.currentSong.details.youTubeCover)}}" frameborder="0" allowfullscreen></iframe>
+                                </div>
                             </div>
+
                             <div class="text" ng-if="vm.currentSong.details.text">
                                 <b>Текст песни:</b>
                                 <pre>{{vm.currentSong.details.text}}</pre>
@@ -219,7 +241,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="addSongModalLabel">{{vm.currentSong.name}}</h4>
+                        <h4 class="modal-title" id="addSongModalLabel">Добавить: {{vm.currentSong.name}}</h4>
                     </div>
                     <div class="modal-footer">
                         <button type="button" ng-click="vm.addSong(vm.currentSong)" class="btn btn-primary" data-dismiss="modal">Add</button>
@@ -229,15 +251,15 @@
                         <div>
                             <div class="song-name">
                                 <b>Название:</b>
-                                <input class="form-control" ng-model="vm.currentSong.name"/>
+                                <input class="form-control" ng-model="vm.currentSong.name" />
                             </div>
                             <div class="song-links">
                                 <b>Тип:</b>
-                                <select class="form-control" ng-model="vm.currentSong.type" ng-options="type for type in vm.songTypes"/>
+                                <select class="form-control" ng-model="vm.currentSong.type" ng-options="type for type in vm.songTypes" />
                             </div>
                             <div class="pass">
                                 <b>Пароль:</b>
-                                <input type="password" class="form-control" ng-model="vm.pass"/>
+                                <input type="password" class="form-control" ng-model="vm.pass" />
                             </div>
                         </div>
                     </div>
@@ -245,7 +267,7 @@
             </div>
         </div>
 
-        
+
 
         <!--Другая херня-->
         <div ng-if="false">
