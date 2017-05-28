@@ -20,6 +20,7 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
         vm.pageName = pageName;
         vm.pageUrl = vm.pages[vm.pageName];
     };
+    //test
     vm.currentSong = {};
     vm.showSong = function (song) {
         vm.currentSong = song;
