@@ -26,10 +26,10 @@ router.route('/songs')
 	});
 router.route('/savesongs')
 	.post(function (req, res) {
-		console.log(res);
-		var songs = res.data;
+		//console.log(req.body);
+		var songs = req.body;
 		var fSongs = JSON.stringify(songs);
+		fs.writeFileSync('data/songs.json', fSongs);
 		//res.send(fSongs);
-		//fs.writeFileSync('data/songs.json', fSongs);
 	});
 module.exports = router;

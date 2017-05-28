@@ -25,17 +25,25 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
         vm.currentSong = song;
     };
     vm.saveSong = function () {
-        //vm.currentSong.details = song;
+        if (vm.currentSong.details.youTube && vm.currentSong.details.youTube.indexOf("youtube") !== -1)
+           vm.currentSong.details.youTube = vm.youtube_parser(vm.currentSong.details.youTube);
+        vm.currentSong.details = song;
         vm.editSong = false;
         http.post('api/savesongs/', vm.songs)
     };
-    vm.getVideo = function(source) {
+    vm.getVideo = function (source) {
         return 'https://www.youtube.com/embed/' + source;
     }
+
+    vm.youtube_parser = function (url) {
+        var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+        var match = url.match(regExp);
+        return (match && match[7].length == 11) ? match[7] : false;
+    }
 }]);
-app.config(function($sceDelegateProvider) {
-  $sceDelegateProvider.resourceUrlWhitelist([
-    'self',
-    'https://www.youtube.com/**'
-  ]);
+app.config(function ($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+        'self',
+        'https://www.youtube.com/**'
+    ]);
 });
