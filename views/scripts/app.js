@@ -21,7 +21,7 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
         vm.currentSong = song;
     };
     vm.saveSong = function (song) {
-        if (vm.pass && song.details) {
+        if (vm.pass) {
             if (song.details && song.details.youTube && song.details.youTube.indexOf("youtube") !== -1)
                 song.details.youTube = youtube_parser(song.details.youTube);
             if (song.details && song.details.youTubeCover && song.details.youTubeCover.indexOf("youtube") !== -1)

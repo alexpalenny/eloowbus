@@ -21,11 +21,11 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="song in vm.songs | filter: { type:'author' } as authorSongs">
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.name}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.alex}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.dima}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.grisha}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.valya}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal"><b>{{song.name}}<b><label class="label label-success" ng-show="song.details.repa" style="float:right">ГОТОВИТЬ<label></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.alex == 4, 'bg-info': song.alex == 3, 'bg-warning': song.alex == 2, 'bg-danger': song.alex == 1}"></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.dima == 4, 'bg-info': song.dima == 3, 'bg-warning': song.dima == 2, 'bg-danger': song.dima == 1}"></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.grisha == 4, 'bg-info': song.grisha == 3, 'bg-warning': song.grisha == 2, 'bg-danger': song.grisha == 1}"></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.valya == 4, 'bg-info': song.valya == 3, 'bg-warning': song.valya == 2, 'bg-danger': song.valya == 1}"></td>
                                         <td style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
@@ -64,11 +64,11 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="song in vm.songs | filter: { type:'cover' } as coverSongs">
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.name}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.alex}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.dima}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.grisha}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.valya}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal"><b>{{song.name}}<b><label class="label label-success" ng-show="song.details.repa" style="float:right">ГОТОВИТЬ<label></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.alex == 4, 'bg-info': song.alex == 3, 'bg-warning': song.alex == 2, 'bg-danger': song.alex == 1}"></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.dima == 4, 'bg-info': song.dima == 3, 'bg-warning': song.dima == 2, 'bg-danger': song.dima == 1}"></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.grisha == 4, 'bg-info': song.grisha == 3, 'bg-warning': song.grisha == 2, 'bg-danger': song.grisha == 1}"></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.valya == 4, 'bg-info': song.valya == 3, 'bg-warning': song.valya == 2, 'bg-danger': song.valya == 1}"></td>
                                         <td style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
@@ -107,11 +107,11 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="song in vm.songs | filter: { type:'acoustic' } as acousticSongs">
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.name}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.alex}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.dima}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.grisha}}</td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal">{{song.valya}}</td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal"><b>{{song.name}}<b><label class="label label-success" ng-show="song.details.repa" style="float:right">ГОТОВИТЬ<label></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.alex == 4, 'bg-info': song.alex == 3, 'bg-warning': song.alex == 2, 'bg-danger': song.alex == 1}"></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.dima == 4, 'bg-info': song.dima == 3, 'bg-warning': song.dima == 2, 'bg-danger': song.dima == 1}"></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.grisha == 4, 'bg-info': song.grisha == 3, 'bg-warning': song.grisha == 2, 'bg-danger': song.grisha == 1}"></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.valya == 4, 'bg-info': song.valya == 3, 'bg-warning': song.valya == 2, 'bg-danger': song.valya == 1}"></td>
                                         <td style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
@@ -185,7 +185,6 @@
                             </div>
                             <div class="you-tube">
                                 <b>Ссылка YouTube:</b>
-
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="active"><a href="#emainVideo" aria-controls="emainVideo" role="tab" data-toggle="tab">Основное</a></li>
                                     <li role="presentation"><a href="#ecoverVideo" aria-controls="ecoverVideo" role="tab" data-toggle="tab">Кавер</a></li>
@@ -199,13 +198,22 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="repa">
+                                <b>Готовить на репу: </b><input type="checkbox" style="margin-left:5px; vertical-align: middle;" ng-model="vm.currentSong.details.repa" />
+                            </div>
                             <div class="text">
                                 <b>Текст песни:</b>
-                                <textarea rows="15" class="form-control" ng-model="vm.currentSong.details.text"></textarea>
+                                <textarea rows="15" class="form-control" ng-model="vm.currentSong.details.text" />
+                            </div>
+                            <div class="score row">
+                                <div class="col-sm-3"><b>Алик:</b><select class="form-control" ng-model="vm.currentSong.alex" ng-options="val for val in [1,2,3,4]"/></div>
+                                <div class="col-sm-3"><b>Дима:</b><select class="form-control" ng-model="vm.currentSong.dima" ng-options="val for val in [1,2,3,4]"/></div>
+                                <div class="col-sm-3"><b>Гриша:</b><select class="form-control" ng-model="vm.currentSong.grisha" ng-options="val for val in [1,2,3,4]"/></div>
+                                <div class="col-sm-3"><b>Валя:</b><select class="form-control" ng-model="vm.currentSong.valya" ng-options="val for val in [1,2,3,4]"/></div>
                             </div>
                             <div class="song-links">
                                 <b>Ссылки:</b>
-                                <textarea rows="4" class="form-control" ng-model="vm.currentSong.details.links"></textarea>
+                                <textarea rows="4" class="form-control" ng-model="vm.currentSong.details.links" />
                             </div>
                         </div>
                         <div ng-if="!vm.editSong">
@@ -217,7 +225,8 @@
                                 <div role="tabpanel" class="tab-pane active you-tube" id="mainVideo" style="text-align: center" ng-if="vm.currentSong.details.youTube">
                                     <iframe width="100%" ng-src="{{vm.getVideo(vm.currentSong.details.youTube)}}" frameborder="0" allowfullscreen></iframe>
                                 </div>
-                                <div role="tabpanel" ng-class="{active: !vm.currentSong.details.youTube}" class="tab-pane you-tube" id="coverVideo" style="text-align: center" ng-if="vm.currentSong.details.youTubeCover">
+                                <div role="tabpanel" ng-class="{active: !vm.currentSong.details.youTube}" class="tab-pane you-tube" id="coverVideo" style="text-align: center"
+                                    ng-if="vm.currentSong.details.youTubeCover">
                                     <iframe width="100%" ng-src="{{vm.getVideo(vm.currentSong.details.youTubeCover)}}" frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>
