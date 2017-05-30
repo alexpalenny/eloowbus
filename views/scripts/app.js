@@ -6,7 +6,7 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
         table: '/partials/pages/table.html',
         blank: '/partials/pages/blank.html',
     }
-    vm.pass = "";
+    vm.passwordConfirmed = false;
     vm.songs = [];
     vm.songTypes = ["author", "cover", "acoustic"];
     http.get('api/songs/').then(function (res) { vm.songs = res.data; });
@@ -29,10 +29,38 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
             vm.editSong = false;
             saveSongs();
         }
-        else alert("Please enter password and valid form");
+        else vm.accessDeny();
     };
+    vm.accessDeny = function () {
+        vm.passwordConfirmed = false
+        vm.exit();
+        alert("Пожалуйста введите корректный логин и пароль!");
+    }
     vm.getVideo = function (source) {
         return 'https://www.youtube.com/embed/' + source;
+    }
+    vm.authorize = function () {
+        vm.pass = localStorage.getItem('yellow-pass') || "";
+        vm.login = localStorage.getItem('yellow-login') || "";
+        if (vm.login && vm.pass) vm.loginUser();
+    }
+    vm.exit = function () {
+        vm.passwordConfirmed = false;
+        vm.login = "";
+        vm.pass = "";
+        localStorage.removeItem('yellow-pass');
+        localStorage.removeItem('yellow-login');
+    }
+    vm.loginUser = function () {
+        if (vm.login) {
+            http.get('api/confirm-pass/' + vm.pass).then(function (res) {
+                if (res.data) {
+                    vm.passwordConfirmed = true;
+                    localStorage.setItem('yellow-pass', vm.pass);
+                    localStorage.setItem('yellow-login', vm.login);
+                } else vm.accessDeny();
+            });
+        } else vm.accessDeny();
     }
     vm.createSong = function (type) {
         vm.currentSong = { name: "", type: type };
@@ -46,15 +74,16 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
             }
             else alert("Song is invalid!");
         }
-        else alert("Please enter password");
+        else vm.accessDeny();
     }
     vm.removeSong = function (song) {
         if (vm.pass) {
             vm.songs = vm.songs.filter(function (val) { return val.name != song.name || val.type != song.type });
             saveSongs();
         }
-        else alert("Please enter password");
+        else vm.accessDeny();
     }
+    vm.authorize();
     function saveSongs() {
         http.post('api/savesongs/' + vm.pass, vm.songs);
     }

@@ -60,7 +60,7 @@ body {
 }
 .menu-section {
     background-color: #f7f7f7;
-    border-bottom:5px solid #9170E4;
+    border-bottom:5px solid #ffcc00;
     width:100%
 }
 .menu-top-active {
@@ -73,9 +73,8 @@ border-color: rgba(155, 153, 153, 0.23);
 }
 
 .navbar {
-    min-height: 90px;
-    margin-bottom: 0px;
-   
+    min-height: 120px;
+    margin-bottom: 0px;   
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color:transparent;
@@ -101,7 +100,7 @@ height: 60px;
 }
 
 .slide-bdr {
-   border:5px solid #9170E4
+   border:5px solid #ffcc00
 }
 .chat-widget-left:after {
     top: 100%;
@@ -211,7 +210,7 @@ height: 60px;
     font-size:13px;
       background-color: #f7f7f7;
       text-align:right;
-       border-top:5px solid #9170E4;
+       border-top:5px solid #ffcc00;
 
 }
 
@@ -219,3 +218,24 @@ height: 60px;
         color:#000;
     }
 
+.vertical-text {
+	transform: rotate(90deg);
+	transform-origin: left top 0;
+}
+.song-table .panel-heading{
+    color: white;
+    background-color: #337ab7;
+}
+
+@media only screen and (max-width: 480px) {
+    .song-table th:not(:first-child) {
+        padding: 8px 0 8px 0;
+        padding-left: 0 !important;
+        max-width: 33px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /*transform: rotate(90deg);
+        transform-origin: left top 0;
+        float: left;*/
+    }
+} 

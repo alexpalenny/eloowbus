@@ -6,10 +6,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" /></a>
+            <a class="navbar-brand" href="index.html"><img  class="img-responsive img-circle img-thumbnail" src="assets/img/logo-m-d.jpg" /></a>
         </div>
         <div class="right-div">
-            <a href="#" class="btn btn-danger pull-right">ВЫХОД</a>
+            <a href="#" ng-if="vm.passwordConfirmed" ng-click="vm.exit()" class="btn btn-danger pull-right">ВЫХОД</a>
+            <div ng-if="!vm.passwordConfirmed">
+                <div style="display: inline-flex" class="login col-sm-4"><b>Логин:</b><input style="margin-left: 10px" type="text" class="form-control" ng-model="vm.login" /></div>
+                <div style="display: inline-flex" class="pass col-sm-4"><b>Пароль:</b><input style="margin-left: 10px" type="password" class="form-control" ng-model="vm.pass" /></div>
+                <a href="#" ng-click="vm.loginUser()" class="btn btn-success pull-right">ВХОД</a>
+            </div>
         </div>
     </div>
 </div>
@@ -20,13 +25,13 @@
             <div class="col-md-12">
                 <div class="navbar-collapse collapse ">
                     <ul id="menu-top" class="nav navbar-nav navbar-right">
-                        <li><a href="#" ng-click="vm.changePage('index')" ng-class="{'menu-top-active': vm.pageName == 'index'}">О ГРУППЕ</a></li>                           
+                        <li><a href="#" ng-click="vm.changePage('index')" ng-class="{'menu-top-active': vm.pageName == 'index'}">О ГРУППЕ</a></li>
                         <li><a href="#" ng-click="vm.changePage('table')" ng-class="{'menu-top-active': vm.pageName == 'table'}">ПЕСНИ</a></li>
                         <li><a href="#" ng-click="vm.changePage('blank')" ng-class="{'menu-top-active': vm.pageName == 'blank'}">ЧАТ</a></li>
                         <!--<li><a href="index.html" class="menu-top-active">DASHBOARD</a></li>                           
                         <li><a href="table.html">TABLES</a></li>
                         <li><a href="blank.html">BLANK PAGE</a></li>-->
-                            <!--<li><a href="form.html">FORMS</a></li>
+                        <!--<li><a href="form.html">FORMS</a></li>
                             <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">UI ELEMENTS <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">

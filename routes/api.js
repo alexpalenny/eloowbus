@@ -11,7 +11,11 @@ router.route('/posts/:id')
 	.post(function (req, res) {
 		res.send({ message: 'post commant: ' + req.params.id });
 	});
-
+router.route('/confirm-pass/:pass')
+.get(function (req, res) {
+		var confirm = req.params.pass == "nash";
+		res.send(confirm);
+	})
 router.route('/songs')
 	.get(function (req, res) {
 		//https://www.freeformatter.com/javascript-escape.html#ad-output
