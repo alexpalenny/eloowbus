@@ -245,8 +245,13 @@ height: 60px;
     }
     .login input, .pass input {
         max-width: 70px;
+        text-overflow: ellipsis;
     } 
     .right-div {
-        padding-right: 0;        
+        padding-right: 0;
     }  
+    .song-table th, .song-table td {
+        max-width: 30px;
+        text-overflow: ellipsis;
+    }
 } 
