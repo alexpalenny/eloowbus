@@ -13,7 +13,7 @@
             <div ng-if="!vm.passwordConfirmed">
                 <div style="display: inline-flex" class="login col-sm-4"><b>Логин:</b><input style="margin-left: 10px" type="text" class="form-control" ng-model="vm.login" /></div>
                 <div style="display: inline-flex" class="pass col-sm-4"><b>Пароль:</b><input style="margin-left: 10px" type="password" class="form-control" ng-model="vm.pass" /></div>
-                <a href="#" ng-click="vm.loginUser()" class="btn btn-success pull-right">ВХОД</a>
+                <div><a href="#" ng-click="vm.loginUser()" class="btn btn-success pull-right" style="float:right">ВХОД</a></div>
             </div>
         </div>
     </div>

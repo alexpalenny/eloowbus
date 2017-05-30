@@ -231,11 +231,22 @@ height: 60px;
     .song-table th:not(:first-child) {
         padding: 8px 0 8px 0;
         padding-left: 0 !important;
-        max-width: 33px;
+        max-width: 30px;
         overflow: hidden;
         text-overflow: ellipsis;
         /*transform: rotate(90deg);
         transform-origin: left top 0;
         float: left;*/
     }
+    .login, .pass {
+        float: right !important;
+        padding-bottom: 15px;
+        padding-right: 0;
+    }
+    .login input, .pass input {
+        max-width: 120px;
+    } 
+    .right-div {
+        padding-right: 0;        
+    }  
 } 
