@@ -16,7 +16,7 @@
                                         <th>Дима</th>
                                         <th>Гриша</th>
                                         <th>Алик</th>
-                                        <th ng-if="vm.passwordConfirmed"></th>
+                                        <th ng-show="vm.passwordConfirmed"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -26,7 +26,7 @@
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.dima == 4, 'bg-info': song.dima == 3, 'bg-warning': song.dima == 2, 'bg-danger': song.dima == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.grisha == 4, 'bg-info': song.grisha == 3, 'bg-warning': song.grisha == 2, 'bg-danger': song.grisha == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.alex == 4, 'bg-info': song.alex == 3, 'bg-warning': song.alex == 2, 'bg-danger': song.alex == 1}"></td>
-                                        <td ng-if="vm.passwordConfirmed" style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
+                                        <td ng-show="vm.passwordConfirmed" style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
                                     <tr>
@@ -59,7 +59,7 @@
                                         <th>Дима</th>
                                         <th>Гриша</th>
                                         <th>Алик</th>
-                                        <th ng-if="vm.passwordConfirmed"></th>
+                                        <th ng-show="vm.passwordConfirmed"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -69,7 +69,7 @@
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.dima == 4, 'bg-info': song.dima == 3, 'bg-warning': song.dima == 2, 'bg-danger': song.dima == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.grisha == 4, 'bg-info': song.grisha == 3, 'bg-warning': song.grisha == 2, 'bg-danger': song.grisha == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.alex == 4, 'bg-info': song.alex == 3, 'bg-warning': song.alex == 2, 'bg-danger': song.alex == 1}"></td>
-                                        <td ng-if="vm.passwordConfirmed" style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
+                                        <td ng-show="vm.passwordConfirmed" style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
                                     <tr>
@@ -102,7 +102,7 @@
                                         <th>Валя</th>
                                         <th>Дима</th>
                                         <th>Гриша</th>
-                                        <th ng-if="vm.passwordConfirmed"></th>
+                                        <th ng-show="vm.passwordConfirmed"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -112,7 +112,7 @@
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.valya == 4, 'bg-info': song.valya == 3, 'bg-warning': song.valya == 2, 'bg-danger': song.valya == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.dima == 4, 'bg-info': song.dima == 3, 'bg-warning': song.dima == 2, 'bg-danger': song.dima == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.grisha == 4, 'bg-info': song.grisha == 3, 'bg-warning': song.grisha == 2, 'bg-danger': song.grisha == 1}"></td>
-                                        <td ng-if="vm.passwordConfirmed" style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
+                                        <td ng-show="vm.passwordConfirmed" style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
                                     <tr>

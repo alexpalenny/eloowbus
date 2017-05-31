@@ -274,7 +274,7 @@ height: 60px;
     .song-table td:first-child>span, .song-table td:first-child>b {
         display: table;
         float: left;
-        margin-left: 5px;
+        margin-left: 15px;
     }
     .login, .pass {
         float: right !important;
