@@ -227,10 +227,19 @@ height: 60px;
     background-color: #337ab7;
 }
 
+
+.song-table th:first-child, .song-table td:first-child {
+        width: 30% 
+    }
+    .song-table td:first-child>span {
+        display: table;
+        float: right;
+        margin-left: 5px;
+    }
 @media only screen and (max-width: 480px) {
     .song-table th:not(:first-child) {
-        padding: 8px 0 8px 0;
-        padding-left: 0 !important;
+        padding: 8px 0 8px 8px;
+        /*padding-left: 0 !important;*/
         max-width: 20px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -239,7 +248,22 @@ height: 60px;
         float: left;*/
     }
     .song-table th:first-child, .song-table td:first-child {
-        max-width: 100px;
+        max-width: 0;
+        width: 0;
+        margin-left: 10px;
+        padding-left: 0; 
+        padding-right: 0;
+    }
+    .song-table tr:last-child>td {
+        padding: 10px;
+    }
+    .song-table th:first-child>span {
+        display: none;
+    }
+    .song-table td:first-child>span, .song-table td:first-child>b {
+        display: table;
+        float: left;
+        margin-left: 5px;
     }
     .login, .pass {
         float: right !important;
@@ -253,12 +277,12 @@ height: 60px;
     .right-div {
         padding-right: 0;
     }
-    pre, .song-table textarea {
+    .song-table pre, .song-table textarea {
         font-size: 10px;
         padding-left: 0;
         padding-right: 0;
     }
-    .modal-body {
+    .song-table .modal-body {
         padding-left: 0;
         padding-right: 0;
     } 
