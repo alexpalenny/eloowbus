@@ -231,11 +231,14 @@ height: 60px;
 .song-table th:first-child, .song-table td:first-child {
         width: 30% 
     }
-    .song-table td:first-child>span {
-        display: table;
-        float: right;
-        margin-left: 5px;
-    }
+.song-table td:first-child>span {
+    display: table;
+    float: right;
+    margin-left: 5px;
+}
+.song-table th:last-child {
+    width: 1%;
+}
 @media only screen and (max-width: 480px) {
     .song-table th:not(:first-child) {
         padding: 8px 0 8px 8px;
@@ -253,9 +256,17 @@ height: 60px;
         margin-left: 10px;
         padding-left: 0; 
         padding-right: 0;
+        background: lightslategrey;;
+        border-color: lightslategrey;
     }
     .song-table tr:last-child>td {
         padding: 10px;
+        background: inherit;
+        border-color: inherit;
+    }
+    .song-table tr>th {
+        background: inherit;
+        border-color: inherit;
     }
     .song-table th:first-child>span {
         display: none;
