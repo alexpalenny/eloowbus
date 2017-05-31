@@ -22,9 +22,9 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
     };
     vm.saveSong = function (song) {
         if (vm.pass) {
-            if (song.details && song.details.youTube && song.details.youTube.indexOf("youtube") !== -1)
+            if (song.details && song.details.youTube && containsYouTube(song.details.youTube))
                 song.details.youTube = youtube_parser(song.details.youTube);
-            if (song.details && song.details.youTubeCover && song.details.youTubeCover.indexOf("youtube") !== -1)
+            if (song.details && song.details.youTubeCover && containsYouTube(song.details.youTubeCover))
                 song.details.youTubeCover = youtube_parser(song.details.youTubeCover);
             vm.editSong = false;
             saveSongs();
@@ -91,6 +91,9 @@ app.controller("eloowCtrl", ["$scope", "$http", function (scope, http) {
         var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
         var match = url.match(regExp);
         return (match && match[7].length == 11) ? match[7] : false;
+    }
+    function containsYouTube(link) {
+        return link.indexOf("youtube") !== -1 || link.indexOf("youtu.be") !== -1;
     }
 }]);
 app.config(function ($sceDelegateProvider) {

@@ -16,7 +16,7 @@
                                         <th>Дима</th>
                                         <th>Гриша</th>
                                         <th>Алик</th>
-                                        <th></th>
+                                        <th ng-if="vm.passwordConfirmed"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -26,15 +26,15 @@
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.dima == 4, 'bg-info': song.dima == 3, 'bg-warning': song.dima == 2, 'bg-danger': song.dima == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.grisha == 4, 'bg-info': song.grisha == 3, 'bg-warning': song.grisha == 2, 'bg-danger': song.grisha == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.alex == 4, 'bg-info': song.alex == 3, 'bg-warning': song.alex == 2, 'bg-danger': song.alex == 1}"></td>
-                                        <td style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
+                                        <td ng-if="vm.passwordConfirmed" style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="6"><button class="btn btn-primary btn-small" ng-click="vm.createSong('author')" data-toggle="modal"
+                                        <td colspan="6"><button  ng-if="vm.passwordConfirmed" class="btn btn-primary btn-small" ng-click="vm.createSong('author')" data-toggle="modal"
                                                 data-target="#addSongModal"><i class="glyphicon glyphicon-plus"></i></button>
                                             <span style="float: right"><b>Всего: {{authorSongs.length}}</b></span>
                                         </td>
-                                        <tr>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -59,7 +59,7 @@
                                         <th>Дима</th>
                                         <th>Гриша</th>
                                         <th>Алик</th>
-                                        <th></th>
+                                        <th ng-if="vm.passwordConfirmed"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -69,15 +69,15 @@
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.dima == 4, 'bg-info': song.dima == 3, 'bg-warning': song.dima == 2, 'bg-danger': song.dima == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.grisha == 4, 'bg-info': song.grisha == 3, 'bg-warning': song.grisha == 2, 'bg-danger': song.grisha == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.alex == 4, 'bg-info': song.alex == 3, 'bg-warning': song.alex == 2, 'bg-danger': song.alex == 1}"></td>
-                                        <td style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
+                                        <td ng-if="vm.passwordConfirmed" style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="6"><button class="btn btn-primary btn-small" ng-click="vm.createSong('cover')" data-toggle="modal"
+                                        <td colspan="6"><button ng-if="vm.passwordConfirmed" class="btn btn-primary btn-small" ng-click="vm.createSong('cover')" data-toggle="modal"
                                                 data-target="#addSongModal"><i class="glyphicon glyphicon-plus"></i></button>
                                             <span style="float: right"><b>Всего: {{coverSongs.length}}</b></span>
                                         </td>
-                                        <tr>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -102,7 +102,7 @@
                                         <th>Валя</th>
                                         <th>Дима</th>
                                         <th>Гриша</th>
-                                        <th></th>
+                                        <th ng-if="vm.passwordConfirmed"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -112,15 +112,15 @@
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.valya == 4, 'bg-info': song.valya == 3, 'bg-warning': song.valya == 2, 'bg-danger': song.valya == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.dima == 4, 'bg-info': song.dima == 3, 'bg-warning': song.dima == 2, 'bg-danger': song.dima == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.grisha == 4, 'bg-info': song.grisha == 3, 'bg-warning': song.grisha == 2, 'bg-danger': song.grisha == 1}"></td>
-                                        <td style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
+                                        <td ng-if="vm.passwordConfirmed" style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
                                                 data-target="#removeSongModal"><i class="glyphicon glyphicon glyphicon-trash"></i></button></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="6"><button class="btn btn-primary btn-small" ng-click="vm.createSong('acoustic')" data-toggle="modal"
+                                        <td colspan="6"><button ng-if="vm.passwordConfirmed" class="btn btn-primary btn-small" ng-click="vm.createSong('acoustic')" data-toggle="modal"
                                                 data-target="#addSongModal"><i class="glyphicon glyphicon-plus"></i></button>
                                             <span style="float: right"><b>Всего: {{acousticSongs.length}}</b></span>
                                         </td>
-                                        <tr>
+                                        </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -138,7 +138,7 @@
                         <h4 class="modal-title" id="removeSongModalLabel">Удалить: {{vm.currentSong.name}}</h4>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" ng-click="vm.removeSong(vm.currentSong)" class="btn btn-primary" data-dismiss="modal">Delete</button>
+                        <button type="button" ng-if="vm.passwordConfirmed" ng-click="vm.removeSong(vm.currentSong)" class="btn btn-primary" data-dismiss="modal">Delete</button>
                         <button type="button" class="btn btn-default" ng-click="vm.editSong = false" data-dismiss="modal">Close</button>
                     </div>
                     <div class="modal-body">
@@ -149,10 +149,6 @@
                             <div class="song-links">
                                 <b>Тип:</b> {{vm.currentSong.type}}
                             </div>
-                            <!--<div class="pass">
-                                <b>Пароль:</b>
-                                <input type="password" class="form-control" ng-model="vm.pass" />
-                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -169,16 +165,12 @@
                         <h4 class="modal-title" id="songModalLabel">{{vm.currentSong.name}}</h4>
                     </div>
                     <div class="modal-footer" style="padding-bottom: 0">
-                        <button type="button" ng-if="!vm.editSong" ng-click="vm.editSong = true" class="btn btn-primary">Edit</button>
-                        <button type="button" ng-if="vm.editSong" ng-click="vm.saveSong(vm.currentSong)" class="btn btn-primary">Save</button>
+                        <button type="button" ng-if="!vm.editSong && vm.passwordConfirmed" ng-click="vm.editSong = true" class="btn btn-primary">Edit</button>
+                        <button type="button" ng-if="vm.editSong && vm.passwordConfirmed" ng-click="vm.saveSong(vm.currentSong)" class="btn btn-primary">Save</button>
                         <button type="button" class="btn btn-default" ng-click="vm.editSong = false" data-dismiss="modal">Close</button>
                     </div>
                     <div class="modal-body" style="padding-top: 0">
                         <div ng-if="vm.editSong">
-                            <!--<div class="pass">
-                                <b>Пароль:</b>
-                                <input type="password" class="form-control" ng-model="vm.pass"></input>
-                            </div>-->
                             <div class="song-name">
                                 <b>Название:</b>
                                 <input class="form-control" ng-model="vm.currentSong.name"></input>
@@ -186,8 +178,10 @@
                             <div class="you-tube">
                                 <b>Ссылка YouTube:</b>
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#emainVideo" aria-controls="emainVideo" style="padding: 4px 10px 4px 10px;" role="tab" data-toggle="tab">Оригинал</a></li>
-                                    <li role="presentation"><a href="#ecoverVideo" aria-controls="ecoverVideo" style="padding: 4px 10px 4px 10px;" role="tab" data-toggle="tab">Кавер</a></li>
+                                    <li role="presentation" class="active"><a href="#emainVideo" aria-controls="emainVideo" style="padding: 4px 10px 4px 10px;"
+                                            role="tab" data-toggle="tab">Оригинал</a></li>
+                                    <li role="presentation"><a href="#ecoverVideo" aria-controls="ecoverVideo" style="padding: 4px 10px 4px 10px;"
+                                            role="tab" data-toggle="tab">Кавер</a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active you-tube" id="emainVideo" style="text-align: center">
@@ -199,17 +193,22 @@
                                 </div>
                             </div>
                             <div class="repa">
-                                <b>Готовить на репу: </b><input type="checkbox" style="margin-left:5px; vertical-align: middle;" ng-model="vm.currentSong.details.repa" />
+                                <b>Готовить на репу: </b><input type="checkbox" style="margin-left:5px; vertical-align: middle;"
+                                    ng-model="vm.currentSong.details.repa" />
                             </div>
                             <div class="text">
                                 <b>Текст песни:</b>
                                 <textarea rows="15" class="form-control" ng-model="vm.currentSong.details.text" />
                             </div>
                             <div class="score row">
-                                <div class="col-sm-3"><b>Алик:</b><select class="form-control" ng-model="vm.currentSong.alex" ng-options="val for val in [1,2,3,4]"/></div>
-                                <div class="col-sm-3"><b>Дима:</b><select class="form-control" ng-model="vm.currentSong.dima" ng-options="val for val in [1,2,3,4]"/></div>
-                                <div class="col-sm-3"><b>Гриша:</b><select class="form-control" ng-model="vm.currentSong.grisha" ng-options="val for val in [1,2,3,4]"/></div>
-                                <div class="col-sm-3"><b>Валя:</b><select class="form-control" ng-model="vm.currentSong.valya" ng-options="val for val in [1,2,3,4]"/></div>
+                                <div class="col-sm-3"><b>Алик:</b><select class="form-control" ng-model="vm.currentSong.alex" ng-options="val for val in [1,2,3,4]"
+                                    /></div>
+                                <div class="col-sm-3"><b>Дима:</b><select class="form-control" ng-model="vm.currentSong.dima" ng-options="val for val in [1,2,3,4]"
+                                    /></div>
+                                <div class="col-sm-3"><b>Гриша:</b><select class="form-control" ng-model="vm.currentSong.grisha" ng-options="val for val in [1,2,3,4]"
+                                    /></div>
+                                <div class="col-sm-3"><b>Валя:</b><select class="form-control" ng-model="vm.currentSong.valya" ng-options="val for val in [1,2,3,4]"
+                                    /></div>
                             </div>
                             <div class="song-links">
                                 <b>Ссылки:</b>
@@ -218,8 +217,10 @@
                         </div>
                         <div ng-if="!vm.editSong">
                             <ul ng-if="vm.currentSong.details.youTube || vm.currentSong.details.youTubeCover" class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#mainVideo" aria-controls="mainVideo" role="tab" data-toggle="tab" style="padding: 4px 10px 4px 10px;" ng-if="vm.currentSong.details.youTube">Оригинал</a></li>
-                                <li role="presentation" ng-class="{active: !vm.currentSong.details.youTube}"><a href="#coverVideo" aria-controls="coverVideo" role="tab" style="padding: 4px 10px 4px 10px;" data-toggle="tab" ng-if="vm.currentSong.details.youTubeCover">Кавер</a></li>
+                                <li role="presentation" class="active"><a href="#mainVideo" aria-controls="mainVideo" role="tab" data-toggle="tab" style="padding: 4px 10px 4px 10px;"
+                                        ng-if="vm.currentSong.details.youTube">Оригинал</a></li>
+                                <li role="presentation" ng-class="{active: !vm.currentSong.details.youTube}"><a href="#coverVideo" aria-controls="coverVideo" role="tab" style="padding: 4px 10px 4px 10px;"
+                                        data-toggle="tab" ng-if="vm.currentSong.details.youTubeCover">Кавер</a></li>
                             </ul>
                             <div ng-if="vm.currentSong.details.youTube || vm.currentSong.details.youTubeCover" class="tab-content">
                                 <div role="tabpanel" class="tab-pane active you-tube" id="mainVideo" style="text-align: center" ng-if="vm.currentSong.details.youTube">
@@ -253,7 +254,7 @@
                         <h4 class="modal-title" id="addSongModalLabel">Добавить: {{vm.currentSong.name}}</h4>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" ng-click="vm.addSong(vm.currentSong)" class="btn btn-primary" data-dismiss="modal">Add</button>
+                        <button type="button" ng-if="vm.passwordConfirmed" ng-click="vm.addSong(vm.currentSong)" class="btn btn-primary" data-dismiss="modal">Add</button>
                         <button type="button" class="btn btn-default" ng-click="vm.editSong = false" data-dismiss="modal">Close</button>
                     </div>
                     <div class="modal-body">
@@ -266,10 +267,6 @@
                                 <b>Тип:</b>
                                 <select class="form-control" ng-model="vm.currentSong.type" ng-options="type for type in vm.songTypes" />
                             </div>
-                            <!--<div class="pass">
-                                <b>Пароль:</b>
-                                <input type="password" class="form-control" ng-model="vm.pass" />
-                            </div>-->
                         </div>
                     </div>
                 </div>
