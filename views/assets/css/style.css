@@ -231,12 +231,15 @@ height: 60px;
     .song-table th:not(:first-child) {
         padding: 8px 0 8px 0;
         padding-left: 0 !important;
-        max-width: 30px;
+        max-width: 20px;
         overflow: hidden;
         text-overflow: ellipsis;
         /*transform: rotate(90deg);
         transform-origin: left top 0;
         float: left;*/
+    }
+    .song-table th:first-child, .song-table td:first-child {
+        max-width: 100px;
     }
     .login, .pass {
         float: right !important;
@@ -249,9 +252,14 @@ height: 60px;
     } 
     .right-div {
         padding-right: 0;
-    }  
-    .song-table th, .song-table td {
-        max-width: 30px;
-        text-overflow: ellipsis;
     }
+    pre, .song-table textarea {
+        font-size: 10px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .modal-body {
+        padding-left: 0;
+        padding-right: 0;
+    } 
 } 

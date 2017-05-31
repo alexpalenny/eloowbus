@@ -98,8 +98,8 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 30%">Песня</th>
-                                        <th>Валя</th>
                                         <th>Алик</th>
+                                        <th>Валя</th>
                                         <th>Дима</th>
                                         <th>Гриша</th>
                                         <th></th>
@@ -108,8 +108,8 @@
                                 <tbody>
                                     <tr ng-repeat="song in vm.songs | filter: { type:'acoustic' } as acousticSongs">
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal"><b>{{song.name}}<b><label class="label label-success" ng-show="song.details.repa" style="float:right">ГОТОВИТЬ<label></td>
-                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.valya == 4, 'bg-info': song.valya == 3, 'bg-warning': song.valya == 2, 'bg-danger': song.valya == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.alex == 4, 'bg-info': song.alex == 3, 'bg-warning': song.alex == 2, 'bg-danger': song.alex == 1}"></td>
+                                        <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.valya == 4, 'bg-info': song.valya == 3, 'bg-warning': song.valya == 2, 'bg-danger': song.valya == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.dima == 4, 'bg-info': song.dima == 3, 'bg-warning': song.dima == 2, 'bg-danger': song.dima == 1}"></td>
                                         <td ng-click="vm.currentSong = song" data-toggle="modal" data-target="#songModal" ng-class="{'bg-success': song.grisha == 4, 'bg-info': song.grisha == 3, 'bg-warning': song.grisha == 2, 'bg-danger': song.grisha == 1}"></td>
                                         <td style="width:20px"><button class="btn btn-primary btn-small" ng-click="vm.currentSong = song" data-toggle="modal"
